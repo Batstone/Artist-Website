@@ -1,0 +1,58 @@
+html {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+
+  --padding-inline: 1rem;
+  --content-max-size: 900px;
+  --breakout-max-size: 1200px;
+
+  --breakout-size: calc(var(--breakout-max-size) - (var(--content-max-size) / 2));
+
+  display: grid;
+
+  grid-template-columns:
+    [full-width-start]
+    minmax(var(--padding-inline), 1fr)
+    [breakout-start]
+    minmax(0, var(--breakout-size))
+    [content-start]
+    min(100% - (var(--padding-inline) * 2), var(--content-max-size))
+    [content-end]
+    minmax(0, var(--breakout-size))
+    [breakout-end]
+    minmax(var(--padding-inline), 1fr)
+    [full-width-end];
+}
+
+.content-grid > :not(.breakout, .full-width),
+.full-width > :not(.breakout, .full-width) {
+  grid-column: content;
+}
+
+.content-grid > .breakout {
+  grid-column: breakout;
+}
+
+.content-grid > .full-width {
+  grid-column: full-width;
+  display: grid;
+  grid-template-columns: inherit;
+}
+
+header {
+  background-color: red;
+  grid-column: full-width;
+}
+
+main {
+  background-color: green;
+  grid-column: content;
+}
+
+footer {
+  background-color: blue;
+  grid-column: full-width;
+}
