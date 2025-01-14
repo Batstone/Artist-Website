@@ -67,12 +67,18 @@ h6 {
   isolation: isolate;
 }
 
+@import url("https://fonts.googleapis.com/css2?family=Raleway:ital@0;1&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Bitter:ital,wght@0,100..900;1,100..900&family=Raleway:ital@0;1&display=swap");
+
 :root {
   --dark-bg: #141618;
   --dark-bg-alt: #2b2f34;
 
   --light-text: #faf9f6;
   --accent-text: #ffb700;
+
+  --font-primary: "Raleway", sans-serif;
+  --font-alt: "Bitter", serif;
 }
 
 html {
@@ -82,6 +88,8 @@ html {
 
 body {
   color: var(--light-text);
+
+  font-family: var(--font-primary);
 
   --padding-inline: 1rem;
   --content-max-size: 900px;
@@ -106,7 +114,7 @@ body {
 }
 
 .content-grid > :not(.breakout, .full-width),
-.full-width > :not(.breakout, .full-width) {
+.full-width > :not(.breakout, .full-width, .header__nav) {
   grid-column: content;
 }
 
@@ -121,11 +129,38 @@ body {
 }
 
 .header {
+  position: relative;
   background-image: url(./assets//images/Adam_Batston-7.jpg);
   background-size: cover;
   background-position: center; /* Keep the image centered */
   background-repeat: no-repeat;
   height: 45vh;
+}
+
+.header__nav {
+  position: relative;
+  top: -100rem;
+  background: var(--dark-bg);
+  height: 55%;
+  transition: top 0.35s ease;
+  grid-column: full-width;
+}
+
+.header__nav.active {
+  display: block;
+  top: 0;
+}
+
+.header__list {
+  display: none;
+  text-transform: uppercase;
+  gap: 1.5rem;
+  text-align: center;
+  padding-left: 0;
+}
+
+.header__nav.active .header__list {
+  display: grid;
 }
 
 /*
@@ -144,5 +179,54 @@ body {
 
 .header__link a {
   list-style-type: none;
+  text-decoration: none;
   color: var(--light-text);
 }
+
+.header__link:first-of-type {
+  margin-top: 2.8rem;
+}
+
+.menu-icon {
+  position: absolute;
+  z-index: 99;
+  right: 1rem;
+  width: 35px;
+  margin-top: 1.1rem;
+  cursor: pointer;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  height: 25px;
+  background-color: transparent;
+  border: none;
+}
+
+.menu-icon span {
+  display: block;
+  height: 3px;
+  width: 100%;
+  background-color: var(--light-text);
+  border-radius: 2px;
+  transition: all 0.3s ease;
+}
+
+/*
+
+.menu-icon.active span {
+  right: 10px;
+}
+
+.menu-icon.active span:nth-child(1) {
+  transform: rotate(45deg) translate(0, 0); 
+}
+
+.menu-icon.active span:nth-child(2) {
+  opacity: 0;
+}
+
+.menu-icon.active span:nth-child(3) {
+  transform: rotate(-45deg) translate(0, 0);
+}
+
+*/
