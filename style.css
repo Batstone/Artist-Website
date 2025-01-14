@@ -1,9 +1,87 @@
-html {
+/* 1. Use a more-intuitive box-sizing model */
+*,
+*::before,
+*::after {
   box-sizing: border-box;
 }
 
-body {
+/* 2. Remove default margin */
+* {
   margin: 0;
+}
+
+body {
+  /* 3. Add accessible line-height */
+  line-height: 1.5;
+  /* 4. Improve text rendering */
+  -webkit-font-smoothing: antialiased;
+}
+
+/* 5. Improve media defaults */
+img,
+picture,
+video,
+canvas,
+svg {
+  display: block;
+  max-width: 100%;
+}
+
+/* 6. Inherit fonts for form controls */
+input,
+button,
+textarea,
+select {
+  font: inherit;
+}
+
+/* 7. Avoid text overflows */
+p,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  overflow-wrap: break-word;
+}
+
+/* 8. Improve line wrapping */
+p {
+  text-wrap: pretty;
+}
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  text-wrap: balance;
+}
+
+/*
+  9. Create a root stacking context
+*/
+#root,
+#__next {
+  isolation: isolate;
+}
+
+:root {
+  --dark-bg: #141618;
+  --dark-bg-alt: #2b2f34;
+
+  --light-text: #faf9f6;
+  --accent-text: #ffb700;
+}
+
+html {
+  box-sizing: border-box;
+  background-color: var(--dark-bg);
+}
+
+body {
+  color: var(--light-text);
 
   --padding-inline: 1rem;
   --content-max-size: 900px;
@@ -32,7 +110,7 @@ body {
   grid-column: content;
 }
 
-.content-grid > .breakout {
+.content-grid .breakout {
   grid-column: breakout;
 }
 
@@ -42,17 +120,29 @@ body {
   grid-template-columns: inherit;
 }
 
-header {
-  background-color: red;
-  grid-column: full-width;
+.header {
+  background-image: url(./assets//images/Adam_Batston-7.jpg);
+  background-size: cover;
+  background-position: center; /* Keep the image centered */
+  background-repeat: no-repeat;
+  height: 45vh;
 }
 
-main {
-  background-color: green;
-  grid-column: content;
+/*
+.header__list {
+  display: grid;
+  grid-template-columns: repeat(4, auto);
+  gap: 4rem;
+  justify-content: end;
+  padding-left: 0;
+}
+*/
+
+.header__link {
+  list-style-type: none;
 }
 
-footer {
-  background-color: blue;
-  grid-column: full-width;
+.header__link a {
+  list-style-type: none;
+  color: var(--light-text);
 }
