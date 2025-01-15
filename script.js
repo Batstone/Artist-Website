@@ -8,7 +8,7 @@ menuIcon.addEventListener("click", () => {
   nav.classList.toggle("active");
 
   if (nav.classList.contains("active")) {
-    nav.querySelector("a").focus();
+    firstLink.focus();
   }
 });
 
