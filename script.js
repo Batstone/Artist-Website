@@ -1,11 +1,17 @@
-const menuIcon = document.getElementById("menu-icon");
-const nav = document.getElementById("navigation");
+const menuIcon = document.querySelector("#menu-icon");
+const nav = document.querySelector("#navigation");
 const firstLink = nav.querySelector("ul li:first-child");
 const lastLink = nav.querySelector("ul li:last-child a");
+const mobileIcon = document.querySelector("#mobile-icon");
 
 menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("active");
   nav.classList.toggle("active");
+
+  const isExpanded = nav.classList.contains("active");
+  menuIcon.setAttribute("aria-expanded", isExpanded);
+
+  mobileIcon.textContent = isExpanded ? "Close mobile navigation" : "Expand mobile navigation";
 
   if (nav.classList.contains("active")) {
     firstLink.focus();
