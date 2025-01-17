@@ -119,37 +119,26 @@ body {
 .content-grid {
   --padding-inline: 2rem;
   --content-max-size: 75rem;
-  --breakout-max-size: 81.25rem;
 
   @media screen and (max-width: 31.25rem) {
     --padding-inline: 0.5rem;
   }
-
-  --breakout-size: calc(var(--breakout-max-size) - (var(--content-max-size) / 2));
 
   display: grid;
 
   grid-template-columns:
     [full-width-start]
     minmax(var(--padding-inline), 1fr)
-    [breakout-start]
-    minmax(0, var(--breakout-size))
     [content-start]
     min(100% - (var(--padding-inline) * 2), var(--content-max-size))
     [content-end]
-    minmax(0, var(--breakout-size))
-    [breakout-end]
     minmax(var(--padding-inline), 1fr)
     [full-width-end];
 }
 
-.content-grid > :not(.breakout, .full-width),
-.full-width > :not(.breakout, .full-width, .header__nav) {
+.content-grid > :not(.full-width),
+.full-width > :not(.full-width, .header__nav) {
   grid-column: content;
-}
-
-.content-grid > .breakout {
-  grid-column: breakout;
 }
 
 .content-grid .full-width {
@@ -275,7 +264,7 @@ nav a:focus {
   font-weight: 300;
   line-height: 2.2rem;
   color: var(--light-text);
-  margin-top: 1.1rem;
+  margin-block-start: 1.1rem;
   justify-self: start;
   span {
     color: var(--accent-text);
@@ -287,9 +276,8 @@ nav a:focus {
   position: absolute;
   top: -100rem;
   background: var(--dark-bg);
-  height: 55%;
+  height: 60%;
   width: 100%;
-  grid-column: full-width;
   transition: top 0.4s ease;
 
   @media (min-width: 48rem) {
@@ -315,15 +303,15 @@ nav a:focus {
     grid-template-columns: repeat(5, auto);
     justify-items: end;
     width: 62%;
-    margin-left: auto;
+    margin-inline-start: auto;
   }
 }
 
 .header__list:first-of-type {
-  margin-top: 3rem;
+  margin-block-start: 3rem;
 
   @media (min-width: 48rem) {
-    margin-top: 0;
+    margin-block-start: 0;
   }
 }
 
@@ -351,7 +339,7 @@ nav a:focus {
   z-index: 99;
   right: 0.5rem;
   width: 3.125rem;
-  margin-top: 1.8rem;
+  margin-block-start: 1.8rem;
   cursor: pointer;
   background-color: transparent;
   border: none;
@@ -364,7 +352,8 @@ nav a:focus {
 .header__mobile-icon span {
   position: relative;
   display: block;
-  margin: 0.4rem;
+  margin-block: 0.4rem;
+  margin-inline: 0.4rem;
   height: 0.188rem;
   background-color: var(--light-text);
   border-radius: 0.125;
@@ -419,7 +408,7 @@ nav a:focus {
 
 .section-title {
   font-size: 2.3rem;
-  margin-block: 4rem;
+  margin-block: 3rem;
   text-align: center;
   text-transform: uppercase;
 }
@@ -485,10 +474,14 @@ h2.section-sub-title .section-title span {
 /* NEWS */
 
 .news__container {
-  display: grid;
-  grid-template-columns: repeat(auto-fit, minmax(18rem, 1fr));
-  gap: 2rem;
   margin-block: 3rem;
+  display: grid;
+  gap: 2rem;
+  grid-template-columns: 1fr;
+
+  @media screen and (min-width: 48rem) {
+    grid-template-columns: 2fr 1fr;
+  }
 }
 
 .news__title {
@@ -496,22 +489,24 @@ h2.section-sub-title .section-title span {
   color: var(--accent-text);
   font-size: 1.5rem;
   font-weight: 300;
-  margin-bottom: 1rem;
+  margin-block: 2rem;
   text-align: center;
   text-transform: uppercase;
 }
 
-.news__items {
-  display: grid;
-  gap: 2rem;
+.news__item,
+.news__listening {
+  border: 0.2rem solid var(--dark-bg-alt);
 }
 
 .news__item {
-  border: 0.2rem solid var(--dark-bg-alt);
   padding-inline: 1.5rem;
   padding-block: 1.5rem;
   border-radius: 0.5rem;
-  align-self: start;
+
+  @media screen and (min-width: 48rem) {
+    padding-inline: 3rem;
+  }
 }
 
 .news__item img {
@@ -519,8 +514,18 @@ h2.section-sub-title .section-title span {
   margin-inline: auto;
 }
 
+.news__item img.large {
+  @media screen and (min-width: 48rem) {
+    width: 80%;
+  }
+}
+
 .news__text {
   margin-block: 1.5rem;
+}
+
+.news__teaching {
+  align-self: start;
 }
 
 /* Bio */
@@ -557,7 +562,8 @@ h2.section-sub-title .section-title span {
 .publications__container,
 .writing__container {
   width: 90%;
-  margin: 0 auto;
+  margin-block: 0;
+  margin-inline: auto;
 
   @media screen and (min-width: 48rem) {
     width: 65%;
