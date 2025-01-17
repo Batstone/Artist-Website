@@ -221,20 +221,30 @@ nav a:focus {
   }
   @media (min-width: 64rem) {
     height: 92vh;
-    background-position: 0 47%;
+    background-position: 0 57%;
   }
   @media (min-width: 80rem) {
     height: 92vh;
-    background-position: center;
+    background-position: 0 52%;
   }
 }
 
 .header__news {
-  background-image: url(./assets//images/Adam_Batston-7-edit.jpg);
+  background-image: url(./assets/images/Adam_Batston-7-edit.jpg);
 }
-.header__bio {
-  background-image: url(./assets//images/Adam_Batston-18-edit.jpg);
+.header__bio,
+.header__teaching,
+.header__publications {
+  background-image: url(./assets/images/Adam_Batston-18-edit.jpg);
   height: 65vh;
+}
+.header__writing {
+  background-image: url(./assets/images/Adam_Batston-32-edit-min.jpg);
+  height: 65vh;
+  background-position: 45% 25%;
+  @media (min-width: 64rem) {
+    background-position: 0 50%;
+  }
 }
 
 .header::before {
@@ -246,6 +256,16 @@ nav a:focus {
   bottom: 30%; /* Controls where the fade ends */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
   z-index: 1;
+}
+
+.header__bio::before {
+  bottom: 0%; /* Controls where the fade ends */
+  background: rgba(255, 183, 0, 0.03); /* Gold color with transparency */
+}
+
+.header__publications::before {
+  bottom: 0%; /* Controls where the fade ends */
+  background: rgba(83, 86, 88, 0.03); /* Gold color with transparency */
 }
 
 .header h1 {
@@ -292,9 +312,9 @@ nav a:focus {
 
   @media (min-width: 48rem) {
     display: grid;
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     justify-items: end;
-    width: 50%;
+    width: 62%;
     margin-left: auto;
   }
 }
@@ -404,6 +424,15 @@ nav a:focus {
   text-transform: uppercase;
 }
 
+.section-title span {
+  color: var(--accent-text);
+}
+
+h3.section-title {
+  margin-block-start: 1rem;
+  margin-block-end: 3rem;
+}
+
 .section-sub-title {
   font-size: 1.2rem;
   color: var(--accent-text);
@@ -411,7 +440,7 @@ nav a:focus {
   margin-block-end: 0.5rem;
 }
 
-.section-title span {
+h2.section-sub-title .section-title span {
   color: var(--accent-text);
 }
 
@@ -442,7 +471,7 @@ nav a:focus {
   text-align: center;
 
   @media screen and (min-width: 48rem) {
-    grid-template-columns: repeat(4, auto);
+    grid-template-columns: repeat(5, auto);
     justify-content: center;
     gap: 2rem;
   }
@@ -506,14 +535,64 @@ nav a:focus {
   grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
 }
 
-.bio__text p {
+.container__text p {
   margin-block: 1.5rem;
 }
 
-.bio__text p:first-of-type {
+.container__text p:first-of-type {
   margin-block-start: 0;
 }
 
 .bio__container img {
   margin-block-end: 3rem;
 }
+
+.bio__contaier-guitars {
+  margin-block-end: 5rem;
+}
+
+/* Teaching */
+
+.teaching__container,
+.publications__container,
+.writing__container {
+  width: 90%;
+  margin: 0 auto;
+
+  @media screen and (min-width: 48rem) {
+    width: 65%;
+  }
+}
+
+.teaching__container a {
+  display: block;
+  text-align: center;
+  margin-block-start: 3rem;
+  font-weight: bold;
+  font-size: 1.2rem;
+  text-transform: uppercase;
+}
+
+/* Publications */
+
+.publications__score {
+  margin-inline: auto;
+  margin-block-start: 3rem;
+}
+
+.publications__score {
+  @media screen and (min-width: 48rem) {
+    width: 90%;
+  }
+}
+
+.publications__score h3 {
+  text-align: center;
+  margin-block-end: 1.5rem;
+}
+
+.publications__score form {
+  text-align: center;
+}
+
+/* Writing */
