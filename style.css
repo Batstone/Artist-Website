@@ -516,7 +516,7 @@ h2.section-sub-title .section-title span {
 
 .news__item img.large {
   @media screen and (min-width: 48rem) {
-    width: 80%;
+    width: 60%;
   }
 }
 
