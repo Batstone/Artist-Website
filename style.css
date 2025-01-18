@@ -483,6 +483,23 @@ h2.section-sub-title .section-title span {
   width: 110%;
 }
 
+.footer__credits {
+  margin-inline: auto;
+  text-align: center;
+  border-top: 0.05rem solid var(--light-text);
+  padding-block: 0.5rem;
+  margin-block-start: 2rem;
+  margin-block-end: 1rem;
+}
+
+.footer__credits span {
+  color: var(--accent-text);
+}
+
+.footer__credits p {
+  font-size: 0.65rem;
+}
+
 /* NEWS */
 
 .news__container {
@@ -550,7 +567,7 @@ h2.section-sub-title .section-title span {
 .bio__container {
   display: grid;
   gap: 2rem;
-  grid-template-columns: repeat(auto-fit, minmax(25rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(21.5rem, 1fr));
 }
 
 .container__text p {
