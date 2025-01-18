@@ -203,7 +203,6 @@ nav a:focus {
   background-position: 55% 65%;
   background-repeat: no-repeat;
   height: 55vh;
-
   @media (min-width: 48rem) {
     height: 80vh;
     background-position: 55% 65%;
@@ -221,18 +220,41 @@ nav a:focus {
 .header__news {
   background-image: url(./assets/images/Adam_Batston-7-edit.jpg);
 }
+
 .header__bio,
+.header__publications,
 .header__teaching,
-.header__publications {
-  background-image: url(./assets/images/Adam_Batston-18-edit.jpg);
-  height: 65vh;
-}
 .header__writing {
+  @media screen and (min-width: 48rem) {
+    height: 75vh;
+  }
+}
+
+.header__bio,
+.header__writing {
+  background-image: url(./assets/images/Adam_Batston-18-edit2.jpg);
+  background-position: 65% 0%;
+
+  @media screen and (min-width: 48rem) {
+    background-position: 0% 55%;
+  }
+}
+
+.header__teaching {
+  background-image: url(./assets/images/Adam_Batston-33-edt2-min.jpg);
+
+  background-position: 40% 10%;
+  @media screen and (min-width: 48rem) {
+    background-position: 10% 0%;
+  }
+}
+
+.header__publications {
   background-image: url(./assets/images/Adam_Batston-32-edit-min.jpg);
-  height: 65vh;
-  background-position: 45% 25%;
-  @media (min-width: 64rem) {
-    background-position: 0 50%;
+
+  background-position: 40% 10%;
+  @media screen and (min-width: 48rem) {
+    background-position: 0% 50%;
   }
 }
 
@@ -245,16 +267,6 @@ nav a:focus {
   bottom: 30%; /* Controls where the fade ends */
   background: linear-gradient(to bottom, rgba(0, 0, 0, 1) 5%, rgba(0, 0, 0, 0) 50%);
   z-index: 1;
-}
-
-.header__bio::before {
-  bottom: 0%; /* Controls where the fade ends */
-  background: rgba(255, 183, 0, 0.03); /* Gold color with transparency */
-}
-
-.header__publications::before {
-  bottom: 0%; /* Controls where the fade ends */
-  background: rgba(83, 86, 88, 0.03); /* Gold color with transparency */
 }
 
 .header h1 {
@@ -505,13 +517,14 @@ h2.section-sub-title .section-title span {
   border-radius: 0.5rem;
 
   @media screen and (min-width: 48rem) {
-    padding-inline: 3rem;
+    padding-inline: 2rem;
   }
 }
 
 .news__item img {
   margin-block: 2rem;
   margin-inline: auto;
+  width: 80%;
 }
 
 .news__item img.large {
