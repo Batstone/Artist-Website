@@ -118,7 +118,7 @@ body {
 
 .content-grid {
   --padding-inline: 2rem;
-  --content-max-size: 75rem;
+  --content-max-size: 68rem;
 
   @media screen and (max-width: 31.25rem) {
     --padding-inline: 0.5rem;
