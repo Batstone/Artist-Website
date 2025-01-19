@@ -85,6 +85,7 @@ h6 {
 :root {
   --dark-bg: #141618;
   --dark-bg-alt: #222529;
+  --black: #000;
 
   --light-text: #faf9f6;
   --accent-text: #ffb700;
@@ -217,6 +218,7 @@ nav a:focus {
 
 .header__news {
   background-image: url(./assets/images/Adam_Batston-7-edit.jpg);
+  background-color: var(--black);
 
   @media (min-width: 48rem) {
     background-image: url(./assets/images/Adam_Batston-7-edit-t.png);
@@ -238,7 +240,7 @@ nav a:focus {
 .header__teaching {
   background-image: url(./assets/images/Adam_Batston-33-edt2-min.jpg);
 
-  background-position: 25% 0;
+  background-position: 15%;
   @media (min-width: 48rem) {
     background-position: 8% 0;
   }
