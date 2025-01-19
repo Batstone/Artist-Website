@@ -3,7 +3,6 @@ const nav = document.querySelector<HTMLElement>("#navigation")!;
 const firstLink = nav.querySelector<HTMLElement>("ul li:first-child")!;
 const lastLink = nav.querySelector<HTMLElement>("ul li:last-child a")!;
 const mobileIcon = document.querySelector<HTMLElement>("#mobile-icon")!;
-const listeningList = document.querySelector<HTMLElement>("#news__listening-list")!;
 
 menuIcon.addEventListener("click", () => {
   menuIcon.classList.toggle("active");
