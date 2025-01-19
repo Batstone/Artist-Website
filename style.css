@@ -47,9 +47,10 @@ h6 {
 }
 
 /* 8. Improve line wrapping */
-p {
+p,
+li {
   text-wrap: pretty;
-  font-size: 1rem;
+  font-size: 1.3rem;
 }
 h1,
 h2,
@@ -112,7 +113,6 @@ li {
 
 body {
   color: var(--light-text);
-
   font-family: var(--font-alt);
 }
 
@@ -204,49 +204,38 @@ nav a:focus {
   background-repeat: no-repeat;
   height: 55vh;
   overflow: hidden;
-  @media (min-width: 48rem) {
-    height: 80vh;
-    background-position: 55% 65%;
-  }
-  @media (min-width: 64rem) {
-    height: 92vh;
-    background-position: 0 57%;
-  }
-  @media (min-width: 80rem) {
-    height: 92vh;
-    background-position: 0 52%;
+
+  @media screen and (min-width: 48rem) {
+    height: 75vh;
   }
 }
 
 .header__news {
   background-image: url(./assets/images/Adam_Batston-7-edit.jpg);
-}
 
-.header__bio,
-.header__publications,
-.header__teaching,
-.header__writing {
   @media screen and (min-width: 48rem) {
-    height: 75vh;
+    background-image: url(./assets/images/Adam_Batston-7-edit-t.png);
+    background-size: auto 2000px;
+    background-position: 50% 55%;
   }
 }
 
 .header__bio,
 .header__writing {
   background-image: url(./assets/images/Adam_Batston-18-edit2.jpg);
-  background-position: 65% 0%;
+  background-position: 68% 0%;
 
   @media screen and (min-width: 48rem) {
-    background-position: 0% 55%;
+    background-position: 70% 55%;
   }
 }
 
 .header__teaching {
   background-image: url(./assets/images/Adam_Batston-33-edt2-min.jpg);
 
-  background-position: 40% 10%;
+  background-position: 25% 0;
   @media screen and (min-width: 48rem) {
-    background-position: 10% 0%;
+    background-position: 8% 0;
   }
 }
 
@@ -255,7 +244,7 @@ nav a:focus {
 
   background-position: 40% 10%;
   @media screen and (min-width: 48rem) {
-    background-position: 0% 50%;
+    background-position: 15% 50%;
   }
 }
 
@@ -277,7 +266,7 @@ nav a:focus {
   font-weight: 300;
   line-height: 2.2rem;
   color: var(--light-text);
-  margin-block-start: 1.1rem;
+  margin-block-start: 2rem;
   justify-self: start;
   span {
     color: var(--accent-text);
@@ -286,6 +275,11 @@ nav a:focus {
   @media (max-width: 30rem) {
     font-size: 1.5rem;
   }
+
+  @media (min-width: 81.25rem) {
+    position: relative;
+    right: 5%;
+  }
 }
 
 .header__nav {
@@ -293,14 +287,18 @@ nav a:focus {
   position: absolute;
   top: -100rem;
   background: var(--dark-bg);
-  height: 70%;
+  height: 55%;
   width: 100%;
   transition: top 0.4s ease;
 
   @media (min-width: 48rem) {
-    top: 2.8rem;
+    top: 3.5rem;
     background: transparent;
     grid-column: content;
+  }
+
+  @media screen and (min-width: 81.25rem) {
+    width: 105%;
   }
 }
 
@@ -354,7 +352,8 @@ nav a:focus {
 .header__mobile-icon {
   position: absolute;
   z-index: 99;
-  right: 0.5rem;
+  right: 2rem;
+  top: 0.8rem;
   width: 3.125rem;
   margin-block-start: 1.8rem;
   cursor: pointer;
@@ -528,7 +527,6 @@ h2.section-sub-title .section-title span {
   font-size: 1.5rem;
   font-weight: 300;
   margin-block: 2rem;
-  text-align: center;
   text-transform: uppercase;
 }
 
@@ -651,6 +649,7 @@ h2.section-sub-title .section-title span {
 
 .publications__score form {
   text-align: center;
+  margin-block-start: 2rem;
 }
 
 /* Writing */
