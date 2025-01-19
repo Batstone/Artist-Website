@@ -4,6 +4,7 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" href="./assets/favicon.ico" />
     <title>Adam Batstone / Guitar</title>
     <meta name="description" content="Adam Batstone, Award Winning Guitarist." />
@@ -64,25 +65,38 @@
       <section class="bio">
         <h2 class="section-title">Publications<span> /</span></h2>
         <div class="publications__container">
-          <div class="container__text">
+          <div class="container__text" data-aos="fade-right">
             <p>
-              I am always active transcribing and arranging music for the guitar. My arrangements have been performed in North America and Europe. I will be regularly updating this page with new works for both solo and guitar ensembles. Please check back for new works.
+              I am always active transcribing and arranging music for the guitar. My arrangements have been performed in North America and Europe. I
+              will be regularly updating this page with new works for both solo and guitar ensembles. Please check back for new works.
             </p>
-        </div>
-        <div class="publications__scores">
+          </div>
+          <div class="publications__scores" data-aos="fade-left">
             <div class="publications__score news__item">
-                <h3 class="section-sub-title">Domenico Scarlatti - Sonata K.380 L.23 (Guitar Duo)</h3>
-                <p class="news__text">
-                    Domenico Scarlatti K. 380 for two guitars. Includes score and individual parts. <a href="https://www.youtube.com/watch?v=STlzRi-VUPg" target="_blank">Recorded here<span class="sr-only"> (opens in new window)</span></a> by Altius Duo. $8 USD
-                </p>
-                <img src="./assets/images/Scarlatti_K380.png" alt="Scarlatti K.380 score" />
-                <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
-                    <input type="hidden" name="cmd" value="_s-xclick" />
-                    <input type="hidden" name="hosted_button_id" value="5KXKLGEF8HJPJ" />
-                    <input type="hidden" name="currency_code" value="USD" />
-                    <input type="image" src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif" border="0" name="submit" title="PayPal - The safer, easier way to pay online!" alt="Buy Now" />
-                  </form>
+              <h3 class="section-sub-title">Domenico Scarlatti - Sonata K.380 L.23 (Guitar Duo)</h3>
+              <p class="news__text">
+                Domenico Scarlatti K. 380 for two guitars. Includes score and individual parts.
+                <a href="https://www.youtube.com/watch?v=STlzRi-VUPg" target="_blank"
+                  >Recorded here<span class="sr-only"> (opens in new window)</span></a
+                >
+                by Altius Duo. $8 USD
+              </p>
+              <img src="./assets/images/Scarlatti_K380.png" alt="Scarlatti K.380 score" />
+              <form action="https://www.paypal.com/cgi-bin/webscr" method="post" target="_top">
+                <input type="hidden" name="cmd" value="_s-xclick" />
+                <input type="hidden" name="hosted_button_id" value="5KXKLGEF8HJPJ" />
+                <input type="hidden" name="currency_code" value="USD" />
+                <input
+                  type="image"
+                  src="https://www.paypalobjects.com/en_US/i/btn/btn_buynowCC_LG.gif"
+                  border="0"
+                  name="submit"
+                  title="PayPal - The safer, easier way to pay online!"
+                  alt="Buy Now"
+                />
+              </form>
             </div>
+          </div>
         </div>
       </section>
     </main>
@@ -144,5 +158,9 @@
       </section>
     </footer>
     <script src="/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

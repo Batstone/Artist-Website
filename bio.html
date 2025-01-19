@@ -3,7 +3,8 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <link rel="stylesheet" href="/style.css" />
+    <link rel="stylesheet" href="./style.css" />
+    <link rel="stylesheet" href="https://unpkg.com/aos@next/dist/aos.css" />
     <link rel="icon" href="./assets/favicon.ico" />
     <title>Adam Batstone / Guitar</title>
     <meta name="description" content="Adam Batstone, Award Winning Guitarist." />
@@ -64,7 +65,7 @@
       <section class="bio">
         <h2 class="section-title">Bio<span> /</span></h2>
         <div class="bio__container">
-          <div class="container__text">
+          <div class="container__text" data-aos="fade-right">
             <p>
               Canadian guitarist, Dr. Adam Batstone, obtained his D.M.A. degree from the University of Toronto in 2019. He has been recognized with
               prestigious awards in various national and international guitar competitions, and has captivated audiences across North America with his
@@ -87,7 +88,7 @@
               discovery of each note.
             </p>
           </div>
-          <img src="./assets/images/Adam_Batston-22-edit.jpg" alt="Adam Batstone" />
+          <img src="./assets/images/Adam_Batston-22-edit.jpg" alt="Adam Batstone" data-aos="fade-left" />
 
           <div class="bio__contaier-guitars">
             <h3 class="section-title">Guitars <span>/</span></h3>
@@ -178,5 +179,9 @@
       </section>
     </footer>
     <script src="/script.js"></script>
+    <script src="https://unpkg.com/aos@next/dist/aos.js"></script>
+    <script>
+      AOS.init();
+    </script>
   </body>
 </html>

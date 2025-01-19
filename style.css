@@ -206,7 +206,7 @@ nav a:focus {
   overflow: hidden;
 
   @media screen and (min-width: 48rem) {
-    height: 75vh;
+    height: 100vh;
   }
 }
 
@@ -216,7 +216,7 @@ nav a:focus {
   @media screen and (min-width: 48rem) {
     background-image: url(./assets/images/Adam_Batston-7-edit-t.png);
     background-size: auto 2000px;
-    background-position: 50% 55%;
+    background-position: 50% 45%;
   }
 }
 
@@ -516,7 +516,7 @@ h2.section-sub-title .section-title span {
   gap: 2rem;
   grid-template-columns: 1fr;
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     grid-template-columns: 2fr 1fr;
   }
 }
@@ -528,6 +528,11 @@ h2.section-sub-title .section-title span {
   font-weight: 300;
   margin-block: 2rem;
   text-transform: uppercase;
+
+  @media (min-width: 75rem) {
+    position: relative;
+    right: 5%;
+  }
 }
 
 .news__item,
