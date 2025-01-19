@@ -19,8 +19,10 @@ menuIcon.addEventListener("click", () => {
 });
 
 document.addEventListener("keydown", function (e) {
+  const isExpanded = nav.classList.contains("active");
+
   if (e.key === "Tab") {
-    if (document.activeElement === lastLink && !e.shiftKey) {
+    if (document.activeElement === lastLink && isExpanded && !e.shiftKey) {
       e.preventDefault();
       menuIcon.focus();
     }
@@ -30,8 +32,7 @@ document.addEventListener("keydown", function (e) {
       menuIcon.focus();
     }
 
-    // Check if focus is on the menu icon and Shift + Tab is pressed
-    if (document.activeElement === menuIcon && e.shiftKey) {
+    if (document.activeElement === menuIcon && isExpanded && e.shiftKey) {
       e.preventDefault();
       lastLink.focus();
     }

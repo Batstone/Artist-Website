@@ -107,6 +107,11 @@ a:focus {
   color: var(--light-text);
 }
 
+a:focus,
+button:focus {
+  outline: 2px dotted var(--light-text);
+}
+
 li {
   list-style-type: none;
 }
@@ -120,7 +125,7 @@ body {
   --padding-inline: 2rem;
   --content-max-size: 68rem;
 
-  @media screen and (max-width: 31.25rem) {
+  @media (max-width: 31.25rem) {
     --padding-inline: 0.5rem;
   }
 
@@ -205,7 +210,7 @@ nav a:focus {
   height: 55vh;
   overflow: hidden;
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     height: 100vh;
   }
 }
@@ -213,7 +218,7 @@ nav a:focus {
 .header__news {
   background-image: url(./assets/images/Adam_Batston-7-edit.jpg);
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     background-image: url(./assets/images/Adam_Batston-7-edit-t.png);
     background-size: auto 2000px;
     background-position: 50% 45%;
@@ -225,7 +230,7 @@ nav a:focus {
   background-image: url(./assets/images/Adam_Batston-18-edit2.jpg);
   background-position: 68% 0%;
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     background-position: 70% 55%;
   }
 }
@@ -234,7 +239,7 @@ nav a:focus {
   background-image: url(./assets/images/Adam_Batston-33-edt2-min.jpg);
 
   background-position: 25% 0;
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     background-position: 8% 0;
   }
 }
@@ -243,7 +248,7 @@ nav a:focus {
   background-image: url(./assets/images/Adam_Batston-32-edit-min.jpg);
 
   background-position: 40% 10%;
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     background-position: 15% 50%;
   }
 }
@@ -287,7 +292,7 @@ nav a:focus {
   position: absolute;
   top: -100rem;
   background: var(--dark-bg);
-  height: 55%;
+  height: 24rem;
   width: 100%;
   transition: top 0.4s ease;
 
@@ -297,7 +302,7 @@ nav a:focus {
     grid-column: content;
   }
 
-  @media screen and (min-width: 81.25rem) {
+  @media (min-width: 81.25rem) {
     width: 105%;
   }
 }
@@ -428,7 +433,7 @@ nav a:focus {
   text-align: center;
   text-transform: uppercase;
 
-  @media screen and (max-width: 30rem) {
+  @media (max-width: 30rem) {
     font-size: 1.8rem;
   }
 }
@@ -479,7 +484,7 @@ h2.section-sub-title .section-title span {
   margin-block: 1.5rem;
   text-align: center;
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     grid-template-columns: repeat(5, auto);
     justify-content: center;
     gap: 2rem;
@@ -545,7 +550,7 @@ h2.section-sub-title .section-title span {
   padding-block: 1.5rem;
   border-radius: 0.5rem;
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     padding-inline: 2rem;
   }
 }
@@ -556,7 +561,7 @@ h2.section-sub-title .section-title span {
 }
 
 .news__item img.large {
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     width: 60%;
   }
 }
@@ -585,7 +590,7 @@ h2.section-sub-title .section-title span {
   grid-template-columns: repeat(2, 1fr);
   padding-inline: 0.5rem;
 
-  @media screen and (max-width: 48rem) {
+  @media (max-width: 48rem) {
     grid-template-columns: 1fr;
   }
 }
@@ -616,7 +621,7 @@ h2.section-sub-title .section-title span {
   margin-block: 0;
   margin-inline: auto;
 
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     width: 65%;
   }
 }
@@ -629,7 +634,7 @@ h2.section-sub-title .section-title span {
   font-size: 1.2rem;
   text-transform: uppercase;
 
-  @media screen and (max-width: 30rem) {
+  @media (max-width: 30rem) {
     font-size: 0.9rem;
   }
 }
@@ -642,7 +647,7 @@ h2.section-sub-title .section-title span {
 }
 
 .publications__score {
-  @media screen and (min-width: 48rem) {
+  @media (min-width: 48rem) {
     width: 90%;
   }
 }
