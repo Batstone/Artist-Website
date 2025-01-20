@@ -13,7 +13,7 @@ menuIcon.addEventListener("click", () => {
 
   mobileIcon.textContent = isExpanded ? "Close mobile navigation" : "Expand mobile navigation";
 
-  if (nav.classList.contains("active")) {
+  if (isExpanded) {
     firstLink.focus();
   }
 });
