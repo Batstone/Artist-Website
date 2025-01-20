@@ -1,4 +1,3 @@
-const menuIcon = document.querySelector<HTMLElement>("#menu-icon")!;
 const nav = document.querySelector<HTMLElement>("#navigation")!;
 const firstLink = nav.querySelector<HTMLElement>("ul li:first-child")!;
 const lastLink = nav.querySelector<HTMLElement>("ul li:last-child a")!;
