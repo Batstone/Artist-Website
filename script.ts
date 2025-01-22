@@ -1,45 +1,43 @@
-const menuIcon = document.querySelector<HTMLElement>("#menu-icon")!;
+const mobileBtn = document.querySelector<HTMLElement>("#mobile-btn")!;
 const nav = document.querySelector<HTMLElement>("#navigation")!;
-const firstLink = nav.querySelector<HTMLElement>("ul li:first-child")!;
+const firstLink = nav.querySelector<HTMLElement>("ul li:first-child a")!;
 const lastLink = nav.querySelector<HTMLElement>("ul li:last-child a")!;
-const mobileIcon = document.querySelector<HTMLElement>("#mobile-icon")!;
+const mobileBtnText = document.querySelector<HTMLElement>("#mobile-btn-text")!;
 
-menuIcon.addEventListener("click", () => {
-  menuIcon.classList.toggle("active");
+mobileBtn.addEventListener("click", () => {
+  mobileBtn.classList.toggle("active");
   nav.classList.toggle("active");
 
   const isExpanded = nav.classList.contains("active");
-  menuIcon.setAttribute("aria-expanded", isExpanded.toString());
+  mobileBtn.setAttribute("aria-expanded", isExpanded.toString());
 
-  mobileIcon.textContent = isExpanded ? "Close mobile navigation" : "Expand mobile navigation";
+  mobileBtnText.textContent = isExpanded ? "Close mobile navigation" : "Expand mobile navigation";
 
-  if (nav.classList.contains("active")) {
-    firstLink.focus();
-  }
+  if (isExpanded) firstLink.focus();
 });
 
 document.addEventListener("keydown", function (e) {
-  const isExpanded = nav.classList.contains("active");
-
   if (e.key === "Tab") {
+    const isExpanded = nav.classList.contains("active");
+
     if (document.activeElement === lastLink && isExpanded && !e.shiftKey) {
       e.preventDefault();
-      menuIcon.focus();
+      mobileBtn.focus();
+    }
+
+    if (document.activeElement === mobileBtn && e.shiftKey) {
+      e.preventDefault();
+      lastLink.focus();
     }
 
     if (document.activeElement === firstLink && e.shiftKey) {
       e.preventDefault();
-      menuIcon.focus();
-    }
-
-    if (document.activeElement === menuIcon && isExpanded && e.shiftKey) {
-      e.preventDefault();
-      lastLink.focus();
+      mobileBtn.focus();
     }
   }
 
   if (e.key === "Escape" && nav.classList.contains("active")) {
-    menuIcon.click();
-    menuIcon.focus();
+    mobileBtn.click();
+    mobileBtn.focus();
   }
 });

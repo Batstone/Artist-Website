@@ -356,7 +356,7 @@ nav a:focus {
   display: grid;
 }
 
-.header__mobile-icon {
+.header__mobile-btn {
   position: absolute;
   z-index: 99;
   right: 2rem;
@@ -372,7 +372,7 @@ nav a:focus {
   }
 }
 
-.header__mobile-icon span {
+.header__mobile-btn span {
   position: relative;
   display: block;
   margin-block: 0.4rem;
@@ -383,17 +383,17 @@ nav a:focus {
   transition: all 0.3s ease;
 }
 
-.header__mobile-icon.active span:nth-child(1) {
+.header__mobile-btn.active span:nth-child(1) {
   transform: rotate(-45deg);
   top: 0.563rem;
   background-color: var(--accent-text);
 }
 
-.header__mobile-icon.active span:nth-child(2) {
+.header__mobile-btn.active span:nth-child(2) {
   display: none;
 }
 
-.header__mobile-icon.active span:nth-child(3) {
+.header__mobile-btn.active span:nth-child(3) {
   transform: rotate(45deg);
   background-color: var(--accent-text);
 }
