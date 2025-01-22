@@ -20,7 +20,7 @@ document.addEventListener("keydown", function (e) {
             e.preventDefault();
             mobileBtn.focus();
         }
-        if (document.activeElement === mobileBtn && e.shiftKey) {
+        if (document.activeElement === mobileBtn && isExpanded && e.shiftKey) {
             e.preventDefault();
             lastLink.focus();
         }
