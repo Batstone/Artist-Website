@@ -12,13 +12,13 @@
   <body class="content-grid">
     <header class="header header__teaching full-width">
       <h1>Adam Batstone<span> / Classical Guitar</span></h1>
-      <button class="header__mobile-btn" id="mobile-btn" aria-expanded="false">
+      <button class="header__mobile-btn" id="mobile-btn" aria-expanded="false" aria-controls="navigation">
         <span></span>
         <span></span>
         <span></span>
         <p id="mobile-btn-text" class="sr-only">Expand mobile navigation</p>
       </button>
-      <nav id="navigation" class="header__nav">
+      <nav id="navigation" class="header__nav" aria-label="Primary">
         <ul class="header__list">
           <li class="header__link"><a href="./index.html">News</a></li>
           <li class="header__link"><a href="./bio.html">Bio</a></li>
@@ -28,7 +28,7 @@
         </ul>
       </nav>
     </header>
-    <main class="full-width">
+    <main id="main" class="full-width">
       <section class="socials full-width">
         <div class="socials__icons">
           <a class="socials__icon" href="https://www.youtube.com/@ClassicalGuitarYoutube" target="_blank">
@@ -116,7 +116,7 @@
             </svg>
           </a>
         </div>
-        <nav id="navigation" class="footer__nav">
+        <nav class="footer__nav" aria-label="Footer">
           <ul class="footer__list">
             <li class="footer__link"><a href="./index.html">News</a></li>
             <li class="footer__link"><a href="./bio.html">Bio</a></li>
