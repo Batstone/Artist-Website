@@ -206,7 +206,6 @@ nav a:focus {
 .header {
   position: relative;
   background-size: cover;
-  background-position: 55% 65%;
   background-repeat: no-repeat;
   height: 55vh;
   overflow: hidden;
@@ -219,6 +218,7 @@ nav a:focus {
 .header__news {
   background-image: url(./assets/images/Adam_Batston-7-edit.jpg);
   background-color: var(--black);
+  background-position: 0 65%;
 
   @media (min-width: 48rem) {
     background-image: url(./assets/images/Adam_Batston-7-edit-t.png);
@@ -230,7 +230,7 @@ nav a:focus {
 .header__bio,
 .header__writing {
   background-image: url(./assets/images/Adam_Batston-18-edit2.jpg);
-  background-position: 68% 0%;
+  background-position: 68%;
 
   @media (min-width: 48rem) {
     background-position: 70% 55%;
@@ -249,7 +249,7 @@ nav a:focus {
 .header__publications {
   background-image: url(./assets/images/Adam_Batston-32-edit-min.jpg);
 
-  background-position: 40% 10%;
+  background-position: 40%;
   @media (min-width: 48rem) {
     background-position: 15% 50%;
   }
